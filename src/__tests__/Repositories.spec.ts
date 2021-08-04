@@ -70,6 +70,7 @@ describe('Repositories', () => {
     await connection.query('DROP TABLE IF EXISTS migrations');
 
     await connection.runMigrations();
+    console.log("Executed migrations");
 
     const [RL, TLOU, NFSMW, NFSP] = await ormGamesRepository.save(gamesSeed);
 
